@@ -1,0 +1,156 @@
+# Agent Prompt: Open Source Network Hardware Recommendation Engine
+
+## Project Overview
+
+Build a full-stack web application that helps network engineers select the right vendor hardware based on their requirements. Think of it as a "Wirecutter for network gear" — an opinionated, questionnaire-driven recommendation engine.
+
+The user answers a structured questionnaire about their network requirements. The engine scores all known products against their answers and returns ranked recommendations with reasoning. The product database is designed so community contributors can add new products with minimal friction.
+
+---
+
+## Questionnaire Categories
+
+Cover at minimum these requirement dimensions:
+
+- **Capacity** — backhaul speed (1G / 10G / 40G / 100G / 400G / 800G), uplink requirements, total interface count by type
+- **Routing scale** — full BGP table support (yes/no), number of BGP peers, VRF count, route table size (IPv4/IPv6)
+- **Traffic profile** — peak bandwidth (Gbps), traffic pattern (core/edge/peering/access), MPLS/segment routing needed
+- **Subscriber scale** — current subscriber count, expected growth over 5 and 10 years, BNG/PPPoE/RADIUS requirements
+- **Features** — EVPN, QoS complexity, multicast, telemetry/streaming, timing/PTP, MACsec
+- **Operational** — preferred OS ecosystem (IOS-XR, JunOS, EOS, NOS-agnostic), automation/YANG support, OpenConfig
+- **Licensing preference** — Perpetual / Subscription / No preference (see Licensing Model section below)
+
+---
+
+## Product Database Design
+
+This is the most important architectural decision. Products must be defined in flat, human-readable data files (YAML or JSON) so contributors don't need to touch application code. Each product file should include:
+
+```yaml
+id: cisco-8201-32fh
+vendor: Cisco
+product_line: 8000 Series
+model: 8201-32FH
+category: core-router  # core-router | edge-router | peering-router | aggregation | access
+
+interfaces:
+  400G: 32
+  100G: 0
+  10G: 0
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 400
+  full_bgp_table: true
+  max_bgp_peers: 4000
+  max_vrfs: 4000
+  max_ipv4_routes: 4000000
+  mpls: true
+  segment_routing: true
+  evpn: true
+  bng: false
+  ptp: true
+  macsec: true
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 12.8
+  subscriber_scale: null  # null means N/A
+
+os: IOS-XR
+
+licensing:
+  model: subscription  # perpetual | subscription | mixed
+  notes: >
+    Requires Smart Licensing. IOS-XR features (MPLS, segment routing,
+    BGP scale) are individually licensed add-ons. Telemetry requires
+    separate license.
+
+notes: >
+  Purpose-built silicon (Q200). Strong fit for core and peering roles.
+  Not suited for BNG/subscriber use cases.
+
+links:
+  datasheet: https://...
+  product_page: https://...
+```
+
+Seed the database with at least 10–15 real products across vendors (Cisco, Juniper, Nokia, Arista, Huawei) covering different tiers and use cases so the engine has enough data to demonstrate meaningful differentiation.
+
+---
+
+## Licensing Model
+
+Do not capture or display pricing of any kind. Licensing model is the right level of abstraction — it's durable, meaningful to ops and finance teams, and doesn't go stale the way list prices do.
+
+Common patterns to represent across the seed products:
+
+- **Perpetual** — pay once, own forever (Arista EOS, most whitebox NOS options)
+- **Subscription** — annual renewal required, features may be gated behind tiers (Cisco Smart Licensing, Nokia SR OS feature packs)
+- **Mixed** — base OS is perpetual, advanced features are subscription (Juniper Flex licensing, some Arista CloudVision add-ons)
+
+The questionnaire should ask: *"Does your organization have a preference or policy around software licensing model?"* with options for Perpetual / Subscription / No preference — and factor that into scoring as a soft filter, not a hard disqualifier.
+
+The results UI should surface the licensing model prominently on each recommendation card so engineers know what they're walking into before the vendor call — but never show or imply a price.
+
+---
+
+## Scoring Engine
+
+Write a scoring module that:
+
+1. Takes the user's questionnaire answers as a structured object
+2. Iterates over every product in the database
+3. Scores each product on a 0–100 scale using weighted criteria
+4. Applies **hard disqualifiers** first (e.g., if the user needs full BGP table and the product can't do it → score = 0, excluded)
+5. Returns ranked results with a per-product breakdown explaining *why* it scored the way it did (e.g., "✓ Supports full BGP table", "✗ No BNG support", "~ Interface count is tight for your 10-year growth projection")
+
+Make the scoring weights configurable, not hardcoded.
+
+---
+
+## Tech Stack
+
+- **Frontend:** React + Tailwind CSS. Multi-step wizard UI for the questionnaire. Results page with ranked cards and score breakdowns.
+- **Backend:** Node.js/Express or Python/FastAPI — whichever feels cleaner. Reads product YAML/JSON files from a `/products` directory at startup.
+- **No database required** — the product files *are* the database. Keep it file-based so contributors can submit products via GitHub pull request without touching SQL.
+- **API:** Single POST endpoint `/api/recommend` that accepts the questionnaire payload and returns ranked results.
+
+---
+
+## Contributor Experience
+
+This is a key goal. The README should include:
+
+- A product template file (`products/_template.yaml`) with every field documented
+- A validation script (`npm run validate`) that checks all product files against a JSON schema and fails with helpful errors
+- A contribution guide explaining exactly how to add a new product (copy template → fill fields → submit PR)
+- A test suite that runs the scoring engine against fixture questionnaires and asserts expected rankings
+
+---
+
+## Stretch Goals
+
+Implement if time allows:
+
+- **Compare mode** — user can pin 2–3 products and see a side-by-side capability matrix
+- **Export** — results as PDF or shareable link
+- **Tag-based filtering** on results (e.g., "show only Juniper", "show only edge routers")
+- **Contributor preview mode** — lets contributors test how a new product file would score against sample questionnaires before submitting a PR
+
+---
+
+## Deliverables
+
+1. Working app with questionnaire wizard and recommendation results
+2. `/products` directory seeded with 10–15 real product YAML files
+3. Scoring engine with configurable weights and disqualifier logic
+4. Product schema + validation script
+5. README with contribution guide
+
+---
+
+## North Star
+
+A network engineer with a new greenfield deployment should be able to fill this out in under 5 minutes and walk away with a shortlist they can actually take to a vendor conversation. The YAML-as-database pattern is the key architectural choice — it's what makes the open source contribution model actually work.

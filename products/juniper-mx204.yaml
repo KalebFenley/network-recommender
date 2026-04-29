@@ -1,0 +1,34 @@
+id: juniper-mx204
+vendor: Juniper
+product_line: MX Series
+model: MX204
+category: edge-router
+interfaces:
+  400G: 0
+  100G: 4
+  40G: 0
+  10G: 8
+  1G: 0
+capabilities:
+  max_backhaul_G: 100
+  full_bgp_table: true
+  max_bgp_peers: 2000
+  max_vrfs: 2000
+  max_ipv4_routes: 2000000
+  mpls: true
+  segment_routing: true
+  evpn: true
+  bng: true
+  ptp: true
+  macsec: true
+  openconfig: true
+  streaming_telemetry: true
+scale:
+  max_bandwidth_Tbps: 0.4
+  subscriber_scale: 32000
+os: JunOS
+licensing:
+  model: mixed
+  notes: Flex licensing for advanced features.
+notes: Versatile edge and peering router.
+links: {}

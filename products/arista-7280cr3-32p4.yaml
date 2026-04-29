@@ -1,0 +1,34 @@
+id: arista-7280cr3-32p4
+vendor: Arista
+product_line: 7280R3 Series
+model: 7280CR3-32P4
+category: peering-router
+interfaces:
+  400G: 4
+  100G: 32
+  40G: 0
+  10G: 0
+  1G: 0
+capabilities:
+  max_backhaul_G: 400
+  full_bgp_table: true
+  max_bgp_peers: 3000
+  max_vrfs: 2000
+  max_ipv4_routes: 2000000
+  mpls: true
+  segment_routing: true
+  evpn: true
+  bng: false
+  ptp: true
+  macsec: true
+  openconfig: true
+  streaming_telemetry: true
+scale:
+  max_bandwidth_Tbps: 4.8
+  subscriber_scale: null
+os: EOS
+licensing:
+  model: perpetual
+  notes: Perpetual OS license.
+notes: Deep buffer peering switch.
+links: {}
