@@ -1,0 +1,45 @@
+id: vendor-model
+vendor: Vendor Name
+product_line: Product Line Name
+model: Model Name
+category: core-router  # core-router | edge-router | peering-router | aggregation | access
+
+interfaces:
+  400G: 0
+  100G: 0
+  40G: 0
+  10G: 0
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 0
+  full_bgp_table: false
+  max_bgp_peers: 0
+  max_vrfs: 0
+  max_ipv4_routes: 0
+  mpls: false
+  segment_routing: false
+  evpn: false
+  bng: false
+  ptp: false
+  macsec: false
+  openconfig: false
+  streaming_telemetry: false
+
+scale:
+  max_bandwidth_Tbps: 0.0
+  subscriber_scale: null  # null means N/A
+
+os: Operating System Name
+
+licensing:
+  model: perpetual  # perpetual | subscription | mixed
+  notes: >
+    Describe licensing model here.
+
+notes: >
+  General notes about the product.
+
+links:
+  datasheet: https://example.com/datasheet
+  product_page: https://example.com/product
