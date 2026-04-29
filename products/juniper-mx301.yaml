@@ -1,0 +1,44 @@
+id: juniper-mx301
+vendor: Juniper
+product_line: MX Series
+model: MX301
+category: edge-router
+
+interfaces:
+  400G: 4
+  100G: 16
+  40G: 0
+  10G: 0
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 400
+  full_bgp_table: true
+  max_bgp_peers: 4000
+  max_vrfs: 4000
+  max_ipv4_routes: 4000000
+  mpls: true
+  segment_routing: true
+  evpn: true
+  bng: true
+  ptp: true
+  macsec: true
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 3.2
+  subscriber_scale: 128000
+
+os: JunOS
+
+licensing:
+  model: mixed
+  notes: >
+    Flex licensing required for advanced routing and BNG features.
+
+notes: >
+  Compact 1RU router positioned as the successor to the MX204. Powered by Trio 6 silicon with 3.2 Tbps capacity and MACsec supported on all ports.
+
+links:
+  datasheet: https://www.juniper.net/us/en/products/routers/mx-series/mx301-universal-routing-platform-datasheet.html

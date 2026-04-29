@@ -1,0 +1,44 @@
+id: arista-7280cr3k-36a-f
+vendor: Arista
+product_line: 7280R3 Series
+model: 7280CR3K-36A-F
+category: peering-router
+
+interfaces:
+  400G: 36
+  100G: 0
+  40G: 0
+  10G: 0
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 400
+  full_bgp_table: true
+  max_bgp_peers: 5000
+  max_vrfs: 4000
+  max_ipv4_routes: 2500000
+  mpls: true
+  segment_routing: true
+  evpn: true
+  bng: false
+  ptp: true
+  macsec: false
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 14.4
+  subscriber_scale: null
+
+os: EOS
+
+licensing:
+  model: perpetual
+  notes: >
+    EOS features are mostly perpetual. Some CloudVision management features are subscription-based.
+
+notes: >
+  High-scale 'K' model with 36x 400G ports. Deep buffers and expanded routing tables make it ideal for internet peering and core routing.
+
+links:
+  datasheet: https://www.arista.com/assets/data/pdf/Datasheets/7280R3-Data-Sheet.pdf

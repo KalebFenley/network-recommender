@@ -1,0 +1,44 @@
+id: juniper-mx304-12x400g
+vendor: Juniper
+product_line: MX Series
+model: MX304 (12x400G Bundle)
+category: edge-router
+
+interfaces:
+  400G: 12
+  100G: 0
+  40G: 0
+  10G: 0
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 400
+  full_bgp_table: true
+  max_bgp_peers: 4000
+  max_vrfs: 4000
+  max_ipv4_routes: 3000000
+  mpls: true
+  segment_routing: true
+  evpn: true
+  bng: true
+  ptp: true
+  macsec: true
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 4.8
+  subscriber_scale: 128000
+
+os: JunOS
+
+licensing:
+  model: mixed
+  notes: >
+    Flex licensing required for advanced routing and BNG features.
+
+notes: >
+  Compact 2RU modular routing platform. This profile models the chassis fully populated with two JNP-MIC1-MACSEC cards (6x400G each).
+
+links:
+  datasheet: https://www.juniper.net/us/en/products/routers/mx-series/mx304-universal-routing-platform-datasheet.html

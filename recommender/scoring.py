@@ -158,6 +158,6 @@ def score_products(questionnaire: Questionnaire, products: List[Product]) -> Lis
         if not disqualified:
             scored.append(ScoredProduct(product=product, score=score, reasons=reasons))
             
-    # Sort by score descending
-    scored.sort(key=lambda x: x.score, reverse=True)
+    # Sort by score descending, tie-break by prioritizing perpetual licensing
+    scored.sort(key=lambda x: (x.score, x.product.licensing.model == "perpetual"), reverse=True)
     return scored
