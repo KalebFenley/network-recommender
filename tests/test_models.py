@@ -31,6 +31,7 @@ def test_product_model_valid():
             "bng": False,
             "ptp": True,
             "macsec": True,
+            "nat": False,
             "openconfig": True,
             "streaming_telemetry": True
         },
@@ -66,7 +67,7 @@ def test_product_model_invalid_category():
         "capabilities": {
             "max_backhaul_G": 1, "full_bgp_table": False, "max_bgp_peers": 1,
             "max_vrfs": 1, "max_ipv4_routes": 1, "mpls": False, "segment_routing": False,
-            "evpn": False, "bng": False, "ptp": False, "macsec": False,
+            "evpn": False, "bng": False, "ptp": False, "macsec": False, "nat": False,
             "openconfig": False, "streaming_telemetry": False
         },
         "scale": {"max_bandwidth_Tbps": 1.0},

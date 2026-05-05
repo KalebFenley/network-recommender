@@ -15,7 +15,7 @@ def create_product(**kwargs):
         "capabilities": {
             "max_backhaul_G": 0, "full_bgp_table": False, "max_bgp_peers": 0,
             "max_vrfs": 0, "max_ipv4_routes": 0, "mpls": False, "segment_routing": False,
-            "evpn": False, "bng": False, "ptp": False, "macsec": False,
+            "evpn": False, "bng": False, "ptp": False, "macsec": False, "nat": False,
             "openconfig": False, "streaming_telemetry": False
         },
         "scale": {"max_bandwidth_Tbps": 0.0},
@@ -47,6 +47,7 @@ def create_questionnaire(**kwargs):
         "needs_evpn": False,
         "needs_ptp": False,
         "needs_macsec": False,
+        "needs_nat": False,
         "needs_openconfig": False,
         "needs_streaming_telemetry": False
     }
