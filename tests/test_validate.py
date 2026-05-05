@@ -27,7 +27,7 @@ def test_validate_all_products_success(tmp_path, capsys):
         "capabilities": {
             "max_backhaul_G": 400, "full_bgp_table": True, "max_bgp_peers": 1,
             "max_vrfs": 1, "max_ipv4_routes": 1, "mpls": False, "segment_routing": False,
-            "evpn": False, "bng": False, "ptp": False, "macsec": False,
+            "evpn": False, "bng": False, "ptp": False, "macsec": False, "nat": False,
             "openconfig": False, "streaming_telemetry": False
         },
         "scale": {"max_bandwidth_Tbps": 12.8},

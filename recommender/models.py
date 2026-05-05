@@ -27,6 +27,7 @@ class Capabilities(BaseModel):
     bng: bool
     ptp: bool
     macsec: bool
+    nat: bool
     openconfig: bool
     streaming_telemetry: bool
 
@@ -90,6 +91,7 @@ class Questionnaire(BaseModel):
     needs_evpn: bool
     needs_ptp: bool
     needs_macsec: bool
+    needs_nat: bool
     needs_openconfig: bool
     needs_streaming_telemetry: bool
 

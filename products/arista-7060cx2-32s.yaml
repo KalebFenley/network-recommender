@@ -1,0 +1,50 @@
+id: arista-7060cx2-32s
+vendor: Arista
+product_line: 7060X2 Series
+model: 7060CX2-32S
+category: aggregation
+
+interfaces:
+  400G: 0
+  100G: 32
+  40G: 0
+  10G: 0
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 100
+  full_bgp_table: false
+  max_bgp_peers: 256
+  max_vrfs: 512
+  max_ipv4_routes: 512000
+  mpls: false
+  segment_routing: false
+  evpn: true
+  bng: false
+  ptp: true
+  macsec: true
+  nat: false
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 6.4
+  subscriber_scale: null
+
+os: EOS
+
+licensing:
+  model: perpetual
+  notes: Perpetual base license. Advanced features may require add-on licenses.
+
+notes: >
+  1RU fixed-configuration leaf/spine switch with 32x 100G QSFP28 ports.
+  Each port supports flexible breakout to 25G, 10G, 40G, or 50G modes
+  simultaneously without restrictions. Successor to the 7060CX with a
+  40% larger 22MB shared packet buffer and native IEEE 802.3by 25G
+  support with RS-FEC on all ports. Sub-450ns cut-through latency makes
+  it ideal for top-of-rack and fixed-spine deployments.
+
+links:
+  datasheet: https://www.arista.com/assets/data/pdf/Datasheets/7060X2_Datasheet.pdf
+  product_page: https://www.arista.com/en/products/arista-7060cx2-series

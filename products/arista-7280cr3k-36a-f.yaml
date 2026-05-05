@@ -23,6 +23,7 @@ capabilities:
   bng: false
   ptp: true
   macsec: false
+  nat: false
   openconfig: true
   streaming_telemetry: true
 
@@ -38,7 +39,7 @@ licensing:
     EOS features are mostly perpetual. Some CloudVision management features are subscription-based.
 
 notes: >
-  High-scale 'K' model with 36x 400G ports. Deep buffers and expanded routing tables make it ideal for internet peering and core routing.
+  High-scale 'K' model with 36x 400G ports. Features deep buffers, virtual output queuing (VOQ), and expanded routing tables, making it ideal for internet peering, core routing, and high-density DCI.
 
 links:
   datasheet: https://www.arista.com/assets/data/pdf/Datasheets/7280R3-Data-Sheet.pdf

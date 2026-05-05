@@ -21,6 +21,7 @@ capabilities:
   bng: false
   ptp: true
   macsec: true
+  nat: false
   openconfig: true
   streaming_telemetry: true
 scale:
@@ -30,5 +31,8 @@ os: EOS
 licensing:
   model: perpetual
   notes: Perpetual OS license.
-notes: Deep buffer peering switch.
-links: {}
+notes: >
+  High-density deep buffer peering switch offering 32x 100G and 4x 400G ports. Powered by the R3 architecture, it provides massive forwarding scale and predictable performance for internet peering and edge routing.
+
+links:
+  datasheet: https://www.arista.com/assets/data/pdf/Datasheets/7280R3_Datasheet.pdf

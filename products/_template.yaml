@@ -23,6 +23,7 @@ capabilities:
   bng: false
   ptp: false
   macsec: false
+  nat: false
   openconfig: false
   streaming_telemetry: false
 

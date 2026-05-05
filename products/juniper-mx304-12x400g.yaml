@@ -23,6 +23,7 @@ capabilities:
   bng: true
   ptp: true
   macsec: true
+  nat: true
   openconfig: true
   streaming_telemetry: true
 
@@ -38,7 +39,7 @@ licensing:
     Flex licensing required for advanced routing and BNG features.
 
 notes: >
-  Compact 2RU modular routing platform. This profile models the chassis fully populated with two JNP-MIC1-MACSEC cards (6x400G each).
+  Compact 2RU modular routing platform powered by Trio 6 silicon. Delivers 4.8 Tbps of system capacity and provides high-density 100G/400G interfaces with advanced automation and telemetry capabilities.
 
 links:
   datasheet: https://www.juniper.net/us/en/products/routers/mx-series/mx304-universal-routing-platform-datasheet.html

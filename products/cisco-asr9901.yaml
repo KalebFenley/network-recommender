@@ -21,6 +21,7 @@ capabilities:
   bng: true
   ptp: true
   macsec: true
+  nat: true
   openconfig: true
   streaming_telemetry: true
 scale:
@@ -30,5 +31,8 @@ os: IOS-XR
 licensing:
   model: subscription
   notes: Smart Licensing required.
-notes: Compact edge router with full BNG.
-links: {}
+notes: >
+  Compact 2RU aggregation services router with a fixed configuration. Delivers 456 Gbps capacity and runs Cisco IOS XR, providing comprehensive edge functionality including full BNG support and rich MPLS features.
+
+links:
+  datasheet: https://www.cisco.com/c/en/us/products/collateral/routers/asr-9000-series-aggregation-services-routers/datasheet-c78-736652.html

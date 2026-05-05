@@ -21,6 +21,7 @@ capabilities:
   bng: true
   ptp: true
   macsec: true
+  nat: true
   openconfig: true
   streaming_telemetry: true
 scale:
@@ -30,5 +31,8 @@ os: SR OS
 licensing:
   model: subscription
   notes: Feature packs required.
-notes: High scale BNG and Edge.
-links: {}
+notes: >
+  High-performance FP4-based service router optimized for massive scale. Excels in complex roles like high-scale broadband network gateway (BNG), provider edge, and deep-buffer peering.
+
+links:
+  datasheet: https://www.nokia.com/networks/products/7750-service-router/

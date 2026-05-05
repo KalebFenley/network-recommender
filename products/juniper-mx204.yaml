@@ -21,6 +21,7 @@ capabilities:
   bng: true
   ptp: true
   macsec: true
+  nat: true
   openconfig: true
   streaming_telemetry: true
 scale:
@@ -30,5 +31,8 @@ os: JunOS
 licensing:
   model: mixed
   notes: Flex licensing for advanced features.
-notes: Versatile edge and peering router.
-links: {}
+notes: >
+  Compact 1RU edge router powered by Trio 4 silicon. Delivers 400 Gbps throughput with rich edge features. Widely popular for diverse roles including peering, provider edge, and broadband network gateway (BNG).
+
+links:
+  datasheet: https://www.juniper.net/documentation/us/en/hardware/mx204/topics/concept/mx204-overview.html

@@ -21,6 +21,7 @@ capabilities:
   bng: false
   ptp: true
   macsec: true
+  nat: false
   openconfig: true
   streaming_telemetry: true
 scale:
@@ -30,5 +31,8 @@ os: JunOS
 licensing:
   model: mixed
   notes: Base OS perpetual, advanced features subscription.
-notes: High-density core router.
-links: {}
+notes: >
+  Ultra-high-density 1RU packet transport router powered by Express 4 silicon. Delivers up to 9.6 Tbps throughput with deep buffers and 400G MACsec, optimized for core, peering, and DCI applications.
+
+links:
+  datasheet: https://www.juniper.net/us/en/products/routers/ptx-series/ptx10001-36mr-packet-transport-router.html
