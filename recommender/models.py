@@ -91,7 +91,7 @@ class Questionnaire(BaseModel):
     needs_evpn: bool
     needs_ptp: bool
     needs_macsec: bool
-    needs_nat: bool
+    needs_nat: bool = False
     needs_openconfig: bool
     needs_streaming_telemetry: bool
 

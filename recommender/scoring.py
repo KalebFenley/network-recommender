@@ -76,6 +76,10 @@ def evaluate_product(q: Questionnaire, p: Product) -> Tuple[int, List[str], bool
         reasons.append("✗ Missing BNG support")
         disqualified = True
         
+    if q.needs_nat and not p.capabilities.nat:
+        reasons.append("✗ Missing NAT support")
+        disqualified = True
+
     if disqualified:
         return 0, reasons, True
         
@@ -98,6 +102,7 @@ def evaluate_product(q: Questionnaire, p: Product) -> Tuple[int, List[str], bool
         ("needs_evpn", "evpn", "EVPN"),
         ("needs_ptp", "ptp", "PTP"),
         ("needs_macsec", "macsec", "MACsec"),
+        ("needs_nat", "nat", "NAT"),
         ("needs_openconfig", "openconfig", "OpenConfig"),
         ("needs_streaming_telemetry", "streaming_telemetry", "Streaming Telemetry")
     ]:
