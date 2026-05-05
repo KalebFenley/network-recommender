@@ -1,0 +1,53 @@
+id: arista-7388x5
+vendor: Arista
+product_line: 7388X5 Series
+model: 7388X5
+category: aggregation
+
+interfaces:
+  400G: 64
+  100G: 0
+  40G: 0
+  10G: 0
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 400
+  full_bgp_table: false
+  max_bgp_peers: 1024
+  max_vrfs: 2000
+  max_ipv4_routes: 800000
+  mpls: true
+  segment_routing: true
+  evpn: true
+  bng: false
+  ptp: true
+  macsec: false
+  nat: false
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 25.6
+  subscriber_scale: null
+
+os: EOS
+
+licensing:
+  model: perpetual
+  notes: >
+    Perpetual EOS license. CloudVision and some advanced telemetry
+    features may require subscription-based add-ons.
+
+notes: >
+  4RU compact modular system with 8 I/O module slots supporting up to
+  64x 400G (OSFP/QSFP-DD), 128x 200G, or 256x 100G ports. Built on a
+  25.6 Tbps packet processor with 114MB fully shared packet buffer and
+  825ns cut-through latency. Supports VXLAN/EVPN, MPLS LSR, ECMP,
+  LANZ microburst detection, and sFlow/IPFIX. Positioned as a
+  high-density spine for large-scale multi-tier data center fabrics
+  where 400G density is needed in a compact modular form factor.
+
+links:
+  datasheet: https://www.arista.com/assets/data/pdf/Datasheets/7388X5_Datasheet.pdf
+  product_page: https://www.arista.com/en/products/arista-7388x5-series

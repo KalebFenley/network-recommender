@@ -21,6 +21,7 @@ capabilities:
   bng: false
   ptp: true
   macsec: true
+  nat: false
   openconfig: true
   streaming_telemetry: true
 scale:
@@ -30,5 +31,8 @@ os: IOS-XR
 licensing:
   model: subscription
   notes: Requires Smart Licensing.
-notes: Strong fit for core and peering roles.
-links: {}
+notes: >
+  High-density core router featuring 32x 400G ports in a 1RU form factor. Powered by Cisco Silicon One Q200, offering massive throughput, large routing tables, and deep buffering for backbone and peering roles.
+
+links:
+  datasheet: https://www.cisco.com/c/en/us/products/collateral/routers/8000-series-routers/datasheet-c78-742721.pdf

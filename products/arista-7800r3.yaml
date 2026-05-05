@@ -1,0 +1,54 @@
+id: arista-7800r3
+vendor: Arista
+product_line: 7800R3 Series
+model: 7800R3 (16-slot)
+category: core-router
+
+interfaces:
+  400G: 288
+  100G: 0
+  40G: 0
+  10G: 0
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 400
+  full_bgp_table: true
+  max_bgp_peers: 32000
+  max_vrfs: 16000
+  max_ipv4_routes: 8000000
+  mpls: true
+  segment_routing: true
+  evpn: true
+  bng: false
+  ptp: true
+  macsec: true
+  nat: false
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 460.0
+  subscriber_scale: null
+
+os: EOS
+
+licensing:
+  model: perpetual
+  notes: >
+    EOS base features are perpetual. CloudVision management, TunnelSec
+    encryption, and advanced service packs may require subscription licensing.
+
+notes: >
+  Arista's flagship modular universal spine available in 4-, 8-, 12-, and
+  16-slot chassis configurations. Supports up to 576x wire-speed 400G ports
+  or 768x 100G ports with deep-buffer VOQ architecture and 8GB of packet
+  memory to eliminate head-of-line blocking. The FlexRoute engine scales
+  to internet-routing-table-plus capacity. Features include EVPN-VXLAN,
+  MPLS, Segment Routing, TunnelSec Layer 2/3 encryption, Algorithmic ACLs,
+  and inband network telemetry. Suited for hyperscale data center cores
+  and large-scale internet exchange/peering deployments.
+
+links:
+  datasheet: https://www.arista.com/assets/data/pdf/Datasheets/7800R3_Datasheet.pdf
+  product_page: https://www.arista.com/en/products/arista-7800r3-series

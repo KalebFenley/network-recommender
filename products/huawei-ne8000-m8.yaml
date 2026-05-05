@@ -21,6 +21,7 @@ capabilities:
   bng: true
   ptp: true
   macsec: false
+  nat: true
   openconfig: true
   streaming_telemetry: true
 scale:
@@ -30,5 +31,8 @@ os: VRP
 licensing:
   model: mixed
   notes: Base + features.
-notes: Aggregation and edge.
-links: {}
+notes: >
+  Compact converged edge router supporting SRv6, 400GE interfaces, and network slicing. Designed for high-capacity aggregation, cloud-era enterprise core, and versatile mobile transport networks.
+
+links:
+  datasheet: https://e.huawei.com/en/products/enterprise-routers/netengine-8000/ne8000-m8

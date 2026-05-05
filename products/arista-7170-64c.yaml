@@ -1,0 +1,54 @@
+id: arista-7170-64c
+vendor: Arista
+product_line: 7170 Series
+model: 7170-64C
+category: aggregation
+
+interfaces:
+  400G: 0
+  100G: 64
+  40G: 0
+  10G: 0
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 100
+  full_bgp_table: false
+  max_bgp_peers: 512
+  max_vrfs: 512
+  max_ipv4_routes: 256000
+  mpls: true
+  segment_routing: true
+  evpn: true
+  bng: false
+  ptp: true
+  macsec: false
+  nat: true
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 12.8
+  subscriber_scale: null
+
+os: EOS
+
+licensing:
+  model: perpetual
+  notes: >
+    Perpetual base EOS license. User-selectable EOS forwarding profiles
+    (P4 programs) are included. CloudVision telemetry features may require
+    separate subscription.
+
+notes: >
+  2RU P4-programmable switch based on the Intel Tofino ASIC with 64x 100G
+  QSFP100 ports. The fully programmable data plane allows user-selectable
+  EOS forwarding profiles, enabling the switch to be reconfigured at runtime
+  for roles such as standard L2/L3 forwarding, large-scale tunnel
+  termination, line-rate NAT, INT telemetry, or load balancing without
+  hardware changes. Under 5W per 100G port makes it exceptionally power
+  efficient. Approximately 800ns latency.
+
+links:
+  datasheet: https://www.arista.com/assets/data/pdf/Datasheets/7170_Datasheet.pdf
+  product_page: https://www.arista.com/en/products/arista-7170-series

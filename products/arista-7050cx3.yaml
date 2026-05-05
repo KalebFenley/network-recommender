@@ -21,6 +21,7 @@ capabilities:
   bng: false
   ptp: true
   macsec: false
+  nat: false
   openconfig: true
   streaming_telemetry: true
 scale:
@@ -30,5 +31,8 @@ os: EOS
 licensing:
   model: perpetual
   notes: Perpetual.
-notes: Leaf switch.
-links: {}
+notes: >
+  High-performance data center leaf/spine switch offering 32x 100G QSFP100 ports. Built on merchant silicon, it delivers low latency, power efficiency, and rich L2/L3 features for enterprise and cloud networks.
+
+links:
+  datasheet: https://www.arista.com/assets/data/pdf/Datasheets/7050X3_Datasheet.pdf

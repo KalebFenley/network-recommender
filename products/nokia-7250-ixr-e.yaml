@@ -21,6 +21,7 @@ capabilities:
   bng: false
   ptp: true
   macsec: true
+  nat: false
   openconfig: true
   streaming_telemetry: true
 scale:
@@ -30,5 +31,8 @@ os: SR OS
 licensing:
   model: subscription
   notes: Feature packs.
-notes: Access/Cell site router.
-links: {}
+notes: >
+  Purpose-built interconnect router for 5G mobile transport, access, and aggregation. Offers high port density, grandmaster timing (PTP), and ruggedized design for cell-site deployment.
+
+links:
+  datasheet: https://www.nokia.com/networks/products/7250-interconnect-router/

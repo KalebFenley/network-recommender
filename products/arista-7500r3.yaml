@@ -1,0 +1,52 @@
+id: arista-7500r3
+vendor: Arista
+product_line: 7500R3 Series
+model: 7500R3 (8-slot)
+category: core-router
+
+interfaces:
+  400G: 144
+  100G: 0
+  40G: 0
+  10G: 0
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 400
+  full_bgp_table: true
+  max_bgp_peers: 10000
+  max_vrfs: 8000
+  max_ipv4_routes: 5000000
+  mpls: true
+  segment_routing: true
+  evpn: true
+  bng: false
+  ptp: true
+  macsec: true
+  nat: false
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 230.0
+  subscriber_scale: null
+
+os: EOS
+
+licensing:
+  model: perpetual
+  notes: >
+    EOS base features are perpetual. CloudVision management and some
+    advanced feature packs may require subscription licensing.
+
+notes: >
+  Modular universal spine switch available in 4-, 8-, and 12-slot chassis
+  configurations supporting up to 288x 400G or 576x 100G ports. The R3K
+  line cards deliver up to 5M IPv4 routes using the FlexRoute engine.
+  Deep-buffer VOQ architecture with 16GB HBM2 per line card eliminates
+  head-of-line blocking. Designed for internet core, large-scale DCI,
+  and hyperscale data center spine deployments.
+
+links:
+  datasheet: https://www.arista.com/assets/data/pdf/Datasheets/7500R3_Datasheet.pdf
+  product_page: https://www.arista.com/en/products/arista-7500r3-series
