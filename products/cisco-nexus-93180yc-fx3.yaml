@@ -1,0 +1,52 @@
+id: cisco-nexus-93180yc-fx3
+vendor: Cisco
+product_line: Nexus 9300-FX3 Series
+model: Nexus 93180YC-FX3
+category: aggregation
+
+interfaces:
+  400G: 0
+  100G: 6
+  40G: 0
+  10G: 48
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 100
+  full_bgp_table: false
+  max_bgp_peers: 1024
+  max_vrfs: 16000
+  max_ipv4_routes: 896000
+  mpls: false
+  segment_routing: false
+  evpn: true
+  bng: false
+  ptp: true
+  macsec: true
+  nat: false
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 1.8
+  subscriber_scale: null
+
+os: NX-OS
+
+licensing:
+  model: subscription
+  notes: >
+    Cisco Smart Licensing. Supports both NX-OS standalone and Cisco ACI
+    fabric modes; advanced feature packs may require additional entitlements.
+
+notes: >
+  1RU high-density aggregation switch with 48x 1/10/25G SFP28 ports
+  (backward compatible with 10G SFP+ fiber optics) and 6x 40/100G QSFP28
+  uplinks. 1.8 Tbps one-way switching capacity with 40 MB on-chip buffer.
+  Supports VXLAN/EVPN, wire-rate MACsec, PTP/SyncE, and rich telemetry.
+  Operates in both NX-OS standalone and Cisco ACI fabric modes. Well-suited
+  for high-density 10G fiber aggregation with a strong 100G uplink story.
+
+links:
+  datasheet: https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/datasheet-c78-742283.html
+  product_page: https://www.cisco.com/c/en/us/products/switches/nexus-93180yc-fx3-switch/index.html

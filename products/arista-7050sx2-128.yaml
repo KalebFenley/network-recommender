@@ -1,0 +1,51 @@
+id: arista-7050sx2-128
+vendor: Arista
+product_line: 7050X2 Series
+model: 7050SX2-128
+category: aggregation
+
+interfaces:
+  400G: 0
+  100G: 0
+  40G: 8
+  10G: 96
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 40
+  full_bgp_table: false
+  max_bgp_peers: 128
+  max_vrfs: 256
+  max_ipv4_routes: 128000
+  mpls: false
+  segment_routing: false
+  evpn: true
+  bng: false
+  ptp: true
+  macsec: false
+  nat: false
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 2.56
+  subscriber_scale: null
+
+os: EOS
+
+licensing:
+  model: perpetual
+  notes: >
+    Perpetual EOS license. CloudVision and advanced telemetry
+    features may require subscription-based add-ons.
+
+notes: >
+  High-density 2RU aggregation switch with 96x native 10G SFP+ fiber ports
+  and 8x 40G QSFP+ uplinks. Delivers 2.56 Tbps switching capacity at
+  550ns cut-through latency. Supports full L2/L3 forwarding, VXLAN/EVPN,
+  MACsec, and LANZ microburst detection. Ideal for aggregation tiers
+  requiring high-density 10G SFP+ fiber connectivity without breakout cables.
+
+links:
+  datasheet: https://www.arista.com/assets/data/pdf/Datasheets/7050X2-Datasheet.pdf
+  product_page: https://www.arista.com/en/products/arista-7050-series
