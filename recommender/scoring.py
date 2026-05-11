@@ -58,6 +58,18 @@ def evaluate_product(q: Questionnaire, p: Product) -> Tuple[int, List[str], bool
     if p.interfaces.speed_100G < q.min_100G:
         reasons.append(f"✗ Has only {p.interfaces.speed_100G} 100G ports (need {q.min_100G})")
         disqualified = True
+
+    if p.interfaces.speed_40G < q.min_40G:
+        reasons.append(f"✗ Has only {p.interfaces.speed_40G} 40G ports (need {q.min_40G})")
+        disqualified = True
+
+    if p.interfaces.speed_10G < q.min_10G:
+        reasons.append(f"✗ Has only {p.interfaces.speed_10G} 10G ports (need {q.min_10G})")
+        disqualified = True
+
+    if p.interfaces.speed_1G < q.min_1G:
+        reasons.append(f"✗ Has only {p.interfaces.speed_1G} 1G ports (need {q.min_1G})")
+        disqualified = True
         
     if p.scale.max_bandwidth_Tbps < q.peak_bandwidth_Tbps:
         reasons.append(f"✗ Bandwidth capacity {p.scale.max_bandwidth_Tbps}Tbps is less than peak {q.peak_bandwidth_Tbps}Tbps")

@@ -168,3 +168,32 @@ def test_evaluate_product_disqualified_bng():
     assert dq is True
     assert any("Missing BNG support" in r for r in reasons)
 
+
+def test_evaluate_product_disqualified_40G():
+    """Requesting 40G ports that the device doesn't have must be a hard disqualifier."""
+    q = create_questionnaire(min_40G=4)
+    p = create_product()  # 0 40G ports
+    score, reasons, dq = evaluate_product(q, p)
+    assert dq is True
+    assert any("40G ports" in r for r in reasons)
+
+
+def test_evaluate_product_disqualified_10G():
+    """Requesting 10G ports (e.g. 20x) that the device lacks must be a hard disqualifier.
+    Regression: QSFP+-only switches were passing this check when min_10G > 0.
+    """
+    q = create_questionnaire(min_10G=20)
+    p = create_product()  # 0 native 10G ports
+    score, reasons, dq = evaluate_product(q, p)
+    assert dq is True
+    assert any("10G ports" in r for r in reasons)
+
+
+def test_evaluate_product_disqualified_1G():
+    """Requesting 1G ports that the device doesn't have must be a hard disqualifier."""
+    q = create_questionnaire(min_1G=8)
+    p = create_product()  # 0 1G ports
+    score, reasons, dq = evaluate_product(q, p)
+    assert dq is True
+    assert any("1G ports" in r for r in reasons)
+
