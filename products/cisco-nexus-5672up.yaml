@@ -1,0 +1,53 @@
+id: cisco-nexus-5672up
+vendor: Cisco
+product_line: Nexus 5600 Series
+model: Nexus 5672UP
+category: aggregation
+
+interfaces:
+  400G: 0
+  100G: 0
+  40G: 6
+  10G: 48
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 40
+  full_bgp_table: false
+  max_bgp_peers: 256
+  max_vrfs: 4000
+  max_ipv4_routes: 32000
+  mpls: false
+  segment_routing: false
+  evpn: true
+  bng: false
+  ptp: false
+  macsec: false
+  nat: false
+  openconfig: false
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 1.44
+  subscriber_scale: null
+
+os: NX-OS
+
+licensing:
+  model: subscription
+  notes: >
+    Cisco Smart Licensing. L3 routing requires an optional Layer 3
+    daughter card. Storage protocol features (FCoE/FC) require a
+    Storage Protocol Services license.
+
+notes: >
+  1RU high-density aggregation switch with 48x native 10G SFP+ ports (24 of
+  which are unified ports supporting FCoE and native Fibre Channel) and 6x
+  40G QSFP+ uplinks. Delivers 1.44 Tbps switching at ~1 microsecond latency.
+  Supports VXLAN bridging/routing, EVPN, FCoE, FEX fabric extension, vPC,
+  and Cisco Nexus Data Broker telemetry. L3 routing requires the optional
+  Layer 3 daughter card. Strong fit for converged SAN/LAN 10G aggregation.
+
+links:
+  datasheet: https://www.cisco.com/c/en/us/products/collateral/switches/nexus-5000-series-switches/datasheet-c78-730110.html
+  product_page: https://www.cisco.com/c/en/us/products/switches/nexus-5672up-switch/index.html

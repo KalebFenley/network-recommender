@@ -1,0 +1,52 @@
+id: juniper-qfx5100-48s
+vendor: Juniper
+product_line: QFX5100 Series
+model: QFX5100-48S
+category: aggregation
+
+interfaces:
+  400G: 0
+  100G: 0
+  40G: 6
+  10G: 48
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 40
+  full_bgp_table: false
+  max_bgp_peers: 256
+  max_vrfs: 256
+  max_ipv4_routes: 128000
+  mpls: true
+  segment_routing: false
+  evpn: true
+  bng: false
+  ptp: true
+  macsec: true
+  nat: false
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 1.44
+  subscriber_scale: null
+
+os: Junos
+
+licensing:
+  model: perpetual
+  notes: >
+    Perpetual Junos base license. Enhanced features such as advanced MPLS
+    and analytics may require additional software licenses.
+
+notes: >
+  1RU high-density aggregation switch with 48x native 1/10G SFP+ fiber ports
+  and 6x 40G QSFP+ uplinks. Delivers 1.44 Tbps non-blocking switching at
+  sub-microsecond latency. Supports hardware-based MACsec, MPLS L3 VPN,
+  VXLAN/EVPN, Virtual Chassis stacking (up to 10 units), and rich automation
+  via Python, Ansible, and OpenConfig. Purpose-built for fiber 10G aggregation
+  without breakout cables.
+
+links:
+  datasheet: https://www.juniper.net/assets/us/en/local/pdf/datasheets/1000480-en.pdf
+  product_page: https://www.juniper.net/us/en/products/switches/qfx-series/qfx5100-ethernet-switch.html

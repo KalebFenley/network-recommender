@@ -1,0 +1,51 @@
+id: arista-7020sr-24c2
+vendor: Arista
+product_line: 7020R Series
+model: 7020SR-24C2
+category: aggregation
+
+interfaces:
+  400G: 0
+  100G: 2
+  40G: 0
+  10G: 24
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 100
+  full_bgp_table: false
+  max_bgp_peers: 128
+  max_vrfs: 256
+  max_ipv4_routes: 200000
+  mpls: false
+  segment_routing: false
+  evpn: true
+  bng: false
+  ptp: true
+  macsec: false
+  nat: false
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 0.88
+  subscriber_scale: null
+
+os: EOS
+
+licensing:
+  model: perpetual
+  notes: >
+    Perpetual EOS license. CloudVision and advanced telemetry
+    features may require subscription-based add-ons.
+
+notes: >
+  Compact 1RU aggregation switch with 24x native 10G SFP+ fiber ports and
+  2x 100G QSFP uplinks. Features a large 3GB shared packet buffer — unusually
+  deep for its class — making it well suited for aggregation roles where
+  traffic bursts need absorption. Wire-speed 880 Gbps switching, 300 Mpps
+  forwarding, and full EOS feature set including VXLAN, EVPN, and LANZ.
+
+links:
+  datasheet: https://www.arista.com/assets/data/pdf/Datasheets/7020R-Datasheet.pdf
+  product_page: https://www.arista.com/en/products/arista-7020r-series

@@ -1,0 +1,52 @@
+id: juniper-ex4600-40f
+vendor: Juniper
+product_line: EX Series
+model: EX4600-40F
+category: aggregation
+
+interfaces:
+  400G: 0
+  100G: 0
+  40G: 4
+  10G: 24
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 40
+  full_bgp_table: false
+  max_bgp_peers: 128
+  max_vrfs: 128
+  max_ipv4_routes: 128000
+  mpls: true
+  segment_routing: false
+  evpn: true
+  bng: false
+  ptp: true
+  macsec: true
+  nat: false
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 0.72
+  subscriber_scale: null
+
+os: Junos
+
+licensing:
+  model: perpetual
+  notes: >
+    Perpetual Junos base license. Enhanced L3 routing and advanced
+    feature packs may require additional software entitlements.
+
+notes: >
+  Compact 1RU aggregation switch with 24x native 10G SFP+ fiber ports and
+  4x 40G QSFP+ uplinks, plus 2 expansion slots for up to 8 additional SFP+
+  or 4 additional QSFP+ ports. 1.44 Tbps switching capacity at 1.07 Bpps.
+  Supports hardware MACsec, MPLS L3 VPN, VXLAN/EVPN, and Virtual Chassis
+  stacking. Flexible forwarding table with 128k LPM routes and 128k host
+  entries. Strong fit for 24-port fiber 10G aggregation tiers.
+
+links:
+  datasheet: https://www.juniper.net/assets/us/en/local/pdf/datasheets/1000480-en.pdf
+  product_page: https://www.juniper.net/us/en/products/switches/ex-series/ex4600-ethernet-switch.html

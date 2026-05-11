@@ -1,0 +1,51 @@
+id: arista-7050sx-64
+vendor: Arista
+product_line: 7050X Series
+model: 7050SX-64
+category: aggregation
+
+interfaces:
+  400G: 0
+  100G: 0
+  40G: 4
+  10G: 48
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 40
+  full_bgp_table: false
+  max_bgp_peers: 128
+  max_vrfs: 256
+  max_ipv4_routes: 208000
+  mpls: false
+  segment_routing: false
+  evpn: true
+  bng: false
+  ptp: true
+  macsec: false
+  nat: false
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 1.28
+  subscriber_scale: null
+
+os: EOS
+
+licensing:
+  model: perpetual
+  notes: >
+    Perpetual EOS license. CloudVision and advanced telemetry
+    features may require subscription-based add-ons.
+
+notes: >
+  1RU high-density aggregation switch with 48x native 10G SFP+ fiber ports
+  and 4x 40G QSFP+ uplinks. Delivers 1.28 Tbps non-blocking switching at
+  550ns cut-through latency with a 12MB shared packet buffer. Supports
+  full L2/L3 forwarding, VXLAN, EVPN, MLAG, LANZ microburst detection,
+  and sFlow. Ideal for 10G fiber aggregation tiers without breakout cables.
+
+links:
+  datasheet: https://www.arista.com/assets/data/pdf/Datasheets/7050X-Datasheet.pdf
+  product_page: https://www.arista.com/en/products/arista-7050-series
