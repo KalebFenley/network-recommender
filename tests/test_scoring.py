@@ -197,3 +197,53 @@ def test_evaluate_product_disqualified_1G():
     assert dq is True
     assert any("1G ports" in r for r in reasons)
 
+
+# --- FlexRoute K tests ---
+
+def test_flexroute_k_disqualifies_without_flag():
+    """A device without flexroute_k must be disqualified when routes exceed max_ipv4_routes."""
+    q = create_questionnaire(min_ipv4_routes=3_000_000)
+    p = create_product(capabilities={"max_backhaul_G": 400, "max_ipv4_routes": 1_400_000,
+                                     "flexroute_k": False})
+    score, reasons, dq = evaluate_product(q, p)
+    assert dq is True
+    assert any("IPv4 routes" in r for r in reasons)
+
+
+def test_flexroute_k_passes_with_flag():
+    """A device with flexroute_k=True must NOT be disqualified for up to 5M route requirements."""
+    q = create_questionnaire(min_ipv4_routes=4_000_000)
+    p = create_product(capabilities={"max_backhaul_G": 400, "max_ipv4_routes": 1_400_000,
+                                     "flexroute_k": True, "full_bgp_table": True})
+    score, reasons, dq = evaluate_product(q, p)
+    assert dq is False
+
+
+def test_flexroute_k_still_disqualifies_above_5m():
+    """Even with flexroute_k=True, a requirement > 5M routes must be disqualified."""
+    q = create_questionnaire(min_ipv4_routes=6_000_000)
+    p = create_product(capabilities={"max_backhaul_G": 400, "max_ipv4_routes": 1_400_000,
+                                     "flexroute_k": True})
+    score, reasons, dq = evaluate_product(q, p)
+    assert dq is True
+    assert any("IPv4 routes" in r for r in reasons)
+
+
+def test_flexroute_k_reason_mentions_k_variant_when_needed():
+    """When flexroute_k is True and K capacity is needed, the reason must mention K-variant."""
+    q = create_questionnaire(min_ipv4_routes=3_000_000)
+    p = create_product(capabilities={"max_backhaul_G": 400, "max_ipv4_routes": 1_400_000,
+                                     "flexroute_k": True, "full_bgp_table": True})
+    score, reasons, dq = evaluate_product(q, p)
+    assert dq is False
+    assert any("K-variant" in r for r in reasons)
+
+
+def test_flexroute_k_reason_mentions_available_when_not_needed():
+    """When flexroute_k is True but the base routes already suffice, surface it as available."""
+    q = create_questionnaire(min_ipv4_routes=500_000)
+    p = create_product(capabilities={"max_backhaul_G": 400, "max_ipv4_routes": 1_400_000,
+                                     "flexroute_k": True, "full_bgp_table": True})
+    score, reasons, dq = evaluate_product(q, p)
+    assert dq is False
+    assert any("K-variant available" in r for r in reasons)

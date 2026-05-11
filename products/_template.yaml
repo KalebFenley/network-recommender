@@ -17,6 +17,7 @@ capabilities:
   max_bgp_peers: 0
   max_vrfs: 0
   max_ipv4_routes: 0
+  flexroute_k: false  # true = Arista K-variant FlexRoute engine available (up to ~5M IPv4 routes)
   mpls: false
   segment_routing: false
   evpn: false

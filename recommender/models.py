@@ -21,6 +21,7 @@ class Capabilities(BaseModel):
     max_bgp_peers: int
     max_vrfs: int
     max_ipv4_routes: int
+    flexroute_k: bool = False  # Arista K-variant FlexRoute engine: expands FIB to ~5M IPv4 routes
     mpls: bool
     segment_routing: bool
     evpn: bool

@@ -42,8 +42,15 @@ def evaluate_product(q: Questionnaire, p: Product) -> Tuple[int, List[str], bool
         reasons.append(f"✗ Supports only {p.capabilities.max_vrfs} VRFs (need {q.min_vrfs})")
         disqualified = True
         
-    if p.capabilities.max_ipv4_routes < q.min_ipv4_routes:
-        reasons.append(f"✗ Supports only {p.capabilities.max_ipv4_routes} IPv4 routes (need {q.min_ipv4_routes})")
+    # IPv4 route scale — if flexroute_k is available, the effective ceiling is 5M
+    FLEXROUTE_K_MAX = 5_000_000
+    effective_ipv4_routes = (
+        max(p.capabilities.max_ipv4_routes, FLEXROUTE_K_MAX)
+        if p.capabilities.flexroute_k
+        else p.capabilities.max_ipv4_routes
+    )
+    if effective_ipv4_routes < q.min_ipv4_routes:
+        reasons.append(f"✗ Supports only {effective_ipv4_routes:,} IPv4 routes (need {q.min_ipv4_routes:,})")
         disqualified = True
         
     # Capacity Disqualifiers
@@ -103,7 +110,16 @@ def evaluate_product(q: Questionnaire, p: Product) -> Tuple[int, List[str], bool
     
     # Routing Scale matching
     score += WEIGHTS["routing_scale_match"]
-    reasons.append(f"✓ Meets routing scale requirements ({p.capabilities.max_ipv4_routes} routes, {p.capabilities.max_vrfs} VRFs)")
+    route_display = p.capabilities.max_ipv4_routes
+    route_note = ""
+    if p.capabilities.flexroute_k and p.capabilities.max_ipv4_routes < q.min_ipv4_routes:
+        route_display = 5_000_000
+        route_note = " (requires K-variant line cards)"
+    elif p.capabilities.flexroute_k:
+        route_note = " (K-variant available for up to 5M routes)"
+    reasons.append(
+        f"✓ Meets routing scale requirements ({route_display:,} routes{route_note}, {p.capabilities.max_vrfs:,} VRFs)"
+    )
     
     # Feature matching
     feature_score = 0
