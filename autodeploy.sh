@@ -2,6 +2,8 @@
 # autodeploy.sh
 # Run this script via cron on your home server (e.g. */5 * * * * /path/to/autodeploy.sh)
 
+set -euo pipefail
+
 cd "$(dirname "$0")" || exit
 
 # Fetch latest from origin
@@ -15,18 +17,22 @@ BASE=$(git merge-base @ "$UPSTREAM")
 
 if [ "$LOCAL" = "$REMOTE" ]; then
     echo "Up-to-date. No deployment needed."
+    exit 0
 elif [ "$LOCAL" = "$BASE" ]; then
-    echo "Changes detected from GitHub! Deploying..."
-    git pull
-    
-    # We rebuild to ensure the frontend static site compiles the latest updates.
-    # The backend will restart and reload the newest YAML files.
-    docker compose up -d --build
-    
-    # Optional cleanup of old dangling images
-    docker image prune -f
-    
-    echo "Deployment complete."
+    echo "Changes detected from GitHub (fast-forward). Deploying..."
+    git pull --ff-only
 else
-    echo "Local repository has diverged. Manual intervention required."
+    # History was rewritten (e.g. git filter-repo / amend / force-push).
+    # Since this is a single-maintainer repo, hard-reset to origin is safe.
+    echo "WARNING: Local history has diverged from origin (force-push detected)."
+    echo "Hard-resetting to origin/master..."
+    git reset --hard origin/master
 fi
+
+# Rebuild and restart containers with the latest code/YAML files
+docker compose up -d --build
+
+# Clean up dangling images
+docker image prune -f
+
+echo "Deployment complete."
