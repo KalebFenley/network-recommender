@@ -13,8 +13,8 @@ capabilities:
   max_backhaul_G: 100
   full_bgp_table: false
   max_bgp_peers: 100
-  max_vrfs: 64
-  max_ipv4_routes: 128000
+  max_vrfs: 128
+  max_ipv4_routes: 360000
   mpls: false
   segment_routing: false
   evpn: true

@@ -22,7 +22,7 @@ capabilities:
   evpn: true
   bng: false
   ptp: true
-  macsec: false
+  macsec: true
   nat: false
   openconfig: true
   streaming_telemetry: true
