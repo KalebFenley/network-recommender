@@ -1,0 +1,53 @@
+id: juniper-ex4550-32f
+vendor: Juniper
+product_line: EX Series
+model: EX4550-32F
+category: aggregation
+
+interfaces:
+  400G: 0
+  100G: 0
+  40G: 2
+  10G: 32
+  1G: 0
+
+capabilities:
+  max_backhaul_G: 40
+  full_bgp_table: false
+  max_bgp_peers: 128
+  max_vrfs: 128
+  max_ipv4_routes: 14000
+  mpls: true
+  segment_routing: false
+  evpn: true
+  bng: false
+  ptp: true
+  macsec: true
+  nat: false
+  openconfig: true
+  streaming_telemetry: true
+
+scale:
+  max_bandwidth_Tbps: 0.48
+  subscriber_scale: null
+
+os: Junos
+
+licensing:
+  model: perpetual
+  notes: >
+    Perpetual Junos base license. Enhanced L3 features and advanced
+    routing capabilities may require an additional software license.
+
+notes: >
+  Compact 1RU aggregation switch with 32x native 10G SFP/SFP+ fiber ports
+  supporting 10GBASE-SR/LR/LRM/ER optics, plus optional 2x 40G QSFP+
+  uplink expansion modules. Wire-speed 480 Gbps switching capacity with
+  full L2/L3 feature set including MPLS, EVPN, VXLAN, MACsec, and PTP.
+  Supports Virtual Chassis for stacking up to 10 units into a single
+  logical device. Purpose-built for fiber-only 10G aggregation without
+  copper or breakout dependencies.
+
+links:
+  datasheet: https://www.juniper.net/assets/us/en/local/pdf/datasheets/1000430-en.pdf
+  product_page: https://www.juniper.net/us/en/products/switches/ex-series/ex4550-ethernet-switch.html
