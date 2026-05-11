@@ -43,8 +43,8 @@ notes: >
   High-density 2RU aggregation switch with 96x native 10G SFP+ fiber ports
   and 8x 40G QSFP+ uplinks. Delivers 2.56 Tbps switching capacity at
   550ns cut-through latency. Supports full L2/L3 forwarding, VXLAN/EVPN,
-  MACsec, and LANZ microburst detection. Ideal for aggregation tiers
-  requiring high-density 10G SFP+ fiber connectivity without breakout cables.
+  and LANZ microburst detection. Ideal for aggregation tiers requiring
+  high-density 10G SFP+ fiber connectivity without breakout cables.
 
 links:
   datasheet: https://www.arista.com/assets/data/pdf/Datasheets/7050X2-Datasheet.pdf

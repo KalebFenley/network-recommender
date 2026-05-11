@@ -28,7 +28,7 @@ capabilities:
   streaming_telemetry: true
 
 scale:
-  max_bandwidth_Tbps: 12.8
+  max_bandwidth_Tbps: 6.4
   subscriber_scale: null
 
 os: EOS
