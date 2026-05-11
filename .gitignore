@@ -19,3 +19,6 @@ dist-ssr/
 .vscode/
 .idea/
 .DS_Store
+
+# One-time scripts (not for repo)
+seed_data.py
