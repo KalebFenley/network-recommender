@@ -16,7 +16,8 @@ capabilities:
   full_bgp_table: true
   max_bgp_peers: 32000
   max_vrfs: 16000
-  max_ipv4_routes: 8000000
+  max_ipv4_routes: 1400000
+  flexroute_k: true
   mpls: true
   segment_routing: true
   evpn: true
